@@ -7623,6 +7623,7 @@ jobs:
           # CONFIG_PACKAGE_fontconfig is not set
           CONFIG_OVERRIDE_PKGS="bonding cifsd cifsd-tools csstidy kcptun libidn2 luci-app-cifsd luci-app-nft-qos luci-app-samba4 luci-app-ttyd nft-qos samba4 softethervpn5 wsdd2" 
         EOF
+
           # 多文件系统支持:
           #cat >> .config <<EOF
           #CONFIG_PACKAGE_kmod-fs-nfs=y
