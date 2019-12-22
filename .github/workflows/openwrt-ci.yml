@@ -1553,16 +1553,16 @@ jobs:
           CONFIG_PACKAGE_ca-certificates=y
           CONFIG_PACKAGE_dnsmasq=y
           # CONFIG_PACKAGE_dnsmasq-dhcpv6 is not set
-          CONFIG_PACKAGE_dnsmasq-full=y
-          CONFIG_PACKAGE_dnsmasq_full_dhcp=y
-          CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-          CONFIG_PACKAGE_dnsmasq_full_dnssec=y
-          CONFIG_PACKAGE_dnsmasq_full_auth=y
-          CONFIG_PACKAGE_dnsmasq_full_ipset=y
-          CONFIG_PACKAGE_dnsmasq_full_conntrack=y
-          CONFIG_PACKAGE_dnsmasq_full_noid=y
+          # CONFIG_PACKAGE_dnsmasq-full=y
+          # CONFIG_PACKAGE_dnsmasq_full_dhcp=y
+          # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+          # CONFIG_PACKAGE_dnsmasq_full_dnssec=y
+          # CONFIG_PACKAGE_dnsmasq_full_auth=y
+          # CONFIG_PACKAGE_dnsmasq_full_ipset=y
+          # CONFIG_PACKAGE_dnsmasq_full_conntrack=y
+          # CONFIG_PACKAGE_dnsmasq_full_noid=y
           # CONFIG_PACKAGE_dnsmasq_full_broken_rtc is not set
-          CONFIG_PACKAGE_dnsmasq_full_tftp=y
+          # CONFIG_PACKAGE_dnsmasq_full_tftp=y
           CONFIG_PACKAGE_dropbear=y
 
           #
@@ -7621,8 +7621,8 @@ jobs:
           # Font-Utils
           #
           # CONFIG_PACKAGE_fontconfig is not set
-          CONFIG_OVERRIDE_PKGS="bonding cifsd cifsd-tools csstidy kcptun libidn2 luci-app-cifsd luci-app-nft-qos luci-app-samba4 luci-app-ttyd nft-qos samba4 softethervpn5 wsdd2" 
-          EOF
+          # CONFIG_OVERRIDE_PKGS="bonding cifsd cifsd-tools csstidy kcptun libidn2 luci-app-cifsd luci-app-nft-qos luci-app-samba4 luci-app-ttyd nft-qos samba4 softethervpn5 wsdd2" 
+         EOF
 
 
           sed -i 's/^[ \t]*//g' ./.config
