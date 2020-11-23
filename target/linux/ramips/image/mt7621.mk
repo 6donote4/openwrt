@@ -274,6 +274,13 @@ define Device/dlink_dir-1960-a1
 endef
 TARGET_DEVICES += dlink_dir-1960-a1
 
+define Device/dlink_dir-2640-a1
+  $(Device/dlink_dir-xx60-a1)
+  DEVICE_MODEL := DIR-2640
+  DEVICE_VARIANT := A1
+endef
+TARGET_DEVICES += dlink_dir-2640-a1
+
 define Device/dlink_dir-2660-a1
   $(Device/dlink_dir-xx60-a1)
   DEVICE_MODEL := DIR-2660
@@ -708,8 +715,8 @@ define Device/MikroTik
   BLOCKSIZE := 64k
   IMAGE_SIZE := 16128k
   DEVICE_PACKAGES := kmod-usb3
-  LOADER_TYPE := elf
-  KERNEL := $(KERNEL_DTB) | loader-kernel
+  KERNEL_NAME := vmlinuz
+  KERNEL := kernel-bin | append-dtb-elf
   IMAGE/sysupgrade.bin := append-kernel | kernel2minor -s 1024 | \
 	pad-to $$$$(BLOCKSIZE) | append-rootfs | pad-rootfs | append-metadata | \
 	check-size
@@ -1218,9 +1225,6 @@ define Device/xiaomi_mir3g-v2
   DEVICE_VENDOR := Xiaomi
   DEVICE_MODEL := Mi Router 3G
   DEVICE_VARIANT := v2
-  DEVICE_ALT0_VENDOR := Xiaomi
-  DEVICE_ALT0_MODEL := Mi Router 4A
-  DEVICE_ALT0_VARIANT := Gigabit Edition
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2
 endef
 TARGET_DEVICES += xiaomi_mir3g-v2
@@ -1243,6 +1247,17 @@ define Device/xiaomi_mir3p
 	kmod-usb-ledtrig-usbport uboot-envtools
 endef
 TARGET_DEVICES += xiaomi_mir3p
+
+define Device/xiaomi_mi-router-4a-gigabit
+  $(Device/dsa-migration)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 14848k
+  DEVICE_VENDOR := Xiaomi
+  DEVICE_MODEL := Mi Router 4A
+  DEVICE_VARIANT := Gigabit Edition
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2
+endef
+TARGET_DEVICES += xiaomi_mi-router-4a-gigabit
 
 define Device/xiaomi_redmi-router-ac2100
   $(Device/xiaomi-ac2100)
